@@ -356,7 +356,7 @@ footer a{color:#fff;font-weight:600}
 
 <script>
 /* ===== À MODIFIER : l'adresse qui reçoit les demandes ===== */
-var EMAIL_RECEPTION = "maxime.cario26@gmail.com";
+var WEB3FORMS_KEY = "5283d338-2dcd-427c-b28b-466fe1e49d7c"; /* demandes envoyées à maxime.cario26@gmail.com */
 /* ========================================================= */
 
 (function(){
@@ -417,9 +417,9 @@ var EMAIL_RECEPTION = "maxime.cario26@gmail.com";
     err.classList.add("hidden");
     send.disabled = true; send.textContent = "Envoi en cours…";
     var data = {
-      _subject: "Nouvelle demande Cario Lab : " + prenom + " (" + offre + ")",
-      _template: "table",
-      _captcha: "false",
+      access_key: WEB3FORMS_KEY,
+      subject: "Nouvelle demande Cario Lab : " + prenom + " (" + offre + ")",
+      from_name: "Site Cario Lab",
       "Prénom": prenom,
       "Activité": form.activite.value.trim(),
       "Email": email,
@@ -427,12 +427,14 @@ var EMAIL_RECEPTION = "maxime.cario26@gmail.com";
       "Offre": offre,
       "Entretien mensuel": entretien.checked ? "Oui" : "Non",
       "Projet": message,
-      _replyto: email
+      replyto: email
     };
-    fetch("https://formsubmit.co/ajax/" + EMAIL_RECEPTION, {
+    var ctrl = new AbortController(); var timer = setTimeout(function(){ ctrl.abort(); }, 15000);
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      signal: ctrl.signal
     }).then(function(r){ return r.json(); }).then(function(res){
       if(res && (res.success === true || res.success === "true")){
         document.getElementById("thanks-title").textContent = "Merci " + prenom + " !";
@@ -442,6 +444,7 @@ var EMAIL_RECEPTION = "maxime.cario26@gmail.com";
     }).catch(function(){
       showErr("L'envoi n'a pas fonctionné. Réessayez dans un instant.");
     }).finally(function(){
+      clearTimeout(timer);
       send.disabled = false; send.textContent = "Envoyer ma demande";
     });
   });
