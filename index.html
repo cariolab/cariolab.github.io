@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cario Lab · Sites de réservation pour indépendantes</title>
+<meta name="description" content="Cario Lab crée des sites de réservation simples et élégants pour prothésistes ongulaires, coiffeuses, esthéticiennes, barbiers et coachs. Prix fixe, sans surprise.">
+<meta property="og:title" content="Cario Lab · Sites de réservation pour indépendantes">
+<meta property="og:description" content="Vos clientes réservent en ligne. Vous, vous travaillez. Sites clé en main à partir de 390 €.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314161B'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' fill='white' text-anchor='middle'%3ECL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--ink:#14161B;--muted:#5A5F6B;--soft:#F3F4F6;--line:#C9CDD5;--accent:#3554F0;--on-dark:#D4D7DE;--dim:#B8BCC6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}a:hover{color:var(--accent)}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.dark{background:var(--ink);color:#fff}
+.soft{background:var(--soft)}
+.sec{padding:96px 0}
+.h2{font-weight:700;font-size:clamp(2rem,3.5vw,2.8rem);letter-spacing:-.02em;line-height:1.1}
+.lead{font-size:1.1rem;line-height:1.6;color:var(--muted)}
+.dark .lead{color:var(--on-dark)}
+.intro{display:flex;flex-direction:column;gap:12px;max-width:680px;margin-bottom:48px}
+.eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;font-family:inherit;font-size:1rem;cursor:pointer;border:1px solid transparent}
+.btn-accent{background:var(--accent);color:#fff}.btn-accent:hover{color:#fff;filter:brightness(1.08)}
+.btn-ghost-dark{color:#fff;border-color:#4A4F5C}.btn-ghost-dark:hover{color:#fff;border-color:#fff}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{color:#fff;opacity:.9}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}.btn-line:hover{background:var(--ink);color:#fff}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+/* header */
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.logo{color:#fff;text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.02em}
+.logo span{color:var(--accent)}.logo:hover{color:#fff}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+nav a.l{color:var(--on-dark);text-decoration:none;font-size:.95rem}nav a.l:hover{color:#fff}
+nav .btn{padding:12px 20px;font-size:.95rem}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:64px;padding-bottom:96px}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.hero h1{font-weight:700;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;letter-spacing:-.03em}
+.hero .eyebrow{color:var(--dim)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.proof{color:var(--on-dark);font-size:.95rem;min-height:44px;display:inline-flex;align-items:center}
+.mock-wrap{flex:1 1 360px;min-width:0;display:flex;justify-content:center}
+.mock{width:100%;max-width:380px;background:#fff;color:var(--ink);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.mock-row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid #E2E4E9}
+.mock-row.on{border:2px solid var(--accent)}
+.mock-row b{display:block;font-size:.95rem}.mock-row small{font-size:.8rem;color:var(--muted)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.slots span{text-align:center;padding:10px 0;border-radius:10px;background:var(--soft);font-size:.85rem;font-weight:500}
+.slots .on{background:var(--accent);color:#fff;font-weight:600}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;padding-top:32px;padding-bottom:32px}
+.chips span{background:#fff;padding:10px 18px;border-radius:999px;font-weight:500}
+.chips .lbl{background:none;color:var(--muted);font-weight:600}
+/* cards */
+.card{background:var(--soft);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.card.d{background:var(--ink);color:#fff}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;line-height:1.5}
+.list li{display:flex;gap:12px;align-items:flex-start}
+.ck{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.feat{background:var(--soft);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.feat h3{font-family:Inter,sans-serif;font-size:1.15rem;font-weight:600}
+.feat p{line-height:1.6;color:var(--muted)}
+/* realisations */
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;justify-items:center}
+figure{margin:0;width:100%;max-width:300px;display:flex;flex-direction:column;gap:14px}
+.phone{border-radius:32px;border:8px solid var(--ink);background:#F7F4EF;box-shadow:0 20px 40px rgba(20,22,27,.18);overflow:hidden}
+.phone.scroll{height:560px;overflow-y:auto}
+.phone img{display:block;width:100%;height:auto}
+figcaption{text-align:center;font-weight:600}
+/* offres */
+.offer{background:var(--soft);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.offer.d{background:var(--ink);color:#fff}
+.offer h3{font-size:1.4rem;font-weight:700}
+.price{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700}
+.price small{font-size:1rem;font-weight:500;color:var(--muted)}
+.offer ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;line-height:1.5}
+.offer .btn{margin-top:auto}
+.offer.d p{color:var(--on-dark)}.offer p{color:var(--muted);line-height:1.6}
+.badge{background:var(--accent);color:#fff;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+/* methode */
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:32px}
+.steps li{display:flex;flex-direction:column;gap:12px}
+.steps .n{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--dim)}
+.steps h3{font-family:Inter,sans-serif;font-size:1.2rem;font-weight:600}
+.steps p{line-height:1.6;color:var(--on-dark)}
+/* faq */
+.faq{max-width:860px}
+.faq-item{background:var(--soft);border-radius:18px;margin-bottom:12px}
+.faq-item button{width:100%;background:transparent;border:none;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:1.05rem;font-weight:600;color:var(--ink);cursor:pointer;min-height:44px}
+.faq-item .sign{flex:none;font-size:1.5rem;line-height:1;color:var(--muted)}
+.faq-item .ans{padding:0 24px 22px;line-height:1.6;color:var(--muted)}
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:56px}
+.contact-text{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.contact-form{flex:1 1 460px;min-width:0}
+form,.thanks{background:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px}
+fieldset{border:none;margin:0;padding:0}
+legend{font-weight:600;font-size:.95rem;padding:0;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:12px 18px;border-radius:999px;font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;min-height:44px;background:#fff;color:var(--ink);border:1px solid var(--line)}
+.pill[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:600;font-size:.95rem}
+.field input,.field textarea{padding:14px 16px;border-radius:12px;border:1px solid var(--line);font-size:1rem;font-family:inherit;min-height:44px;width:100%}
+.field textarea{resize:vertical;line-height:1.5}
+.field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.hint{font-size:.85rem;color:var(--muted);line-height:1.5}
+.check{display:flex;gap:12px;align-items:center;cursor:pointer;min-height:44px}
+.check input{width:20px;height:20px;margin:0;accent-color:var(--accent)}
+.err{padding:12px 16px;border-radius:12px;background:#FDECEC;color:#9B1C1C;font-weight:500}
+.small{font-size:.8rem;color:var(--muted);text-align:center}
+.hidden{display:none!important}
+.thanks{align-items:flex-start}
+.thanks .big{width:56px;height:56px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center}
+footer .wrap{padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:.9rem;color:var(--dim)}
+footer b{font-family:'Space Grotesk',sans-serif;color:#fff;font-size:1.1rem}
+footer a{color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="dark">
+<div class="wrap">
+<a href="#top" class="logo">Cario<span>.</span>Lab</a>
+<nav aria-label="Menu principal">
+<a class="l" href="#offres">Offres</a>
+<a class="l" href="#realisations">Réalisations</a>
+<a class="l" href="#methode">Méthode</a>
+<a class="l" href="#faq">Questions</a>
+<a class="btn btn-accent" href="#contact">Demander un devis</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section id="top" class="dark">
+<div class="wrap hero">
+<div class="hero-text">
+<p class="eyebrow">Sites de réservation pour indépendantes</p>
+<h1>Vos clientes réservent en ligne. Vous, vous travaillez.</h1>
+<p class="lead" style="font-size:1.15rem;max-width:540px">Cario Lab crée des sites simples et élégants pour les prothésistes ongulaires, coiffeuses, esthéticiennes, barbiers et coachs. Votre nom, vos couleurs, vos prestations. Un prix fixe, sans surprise.</p>
+<div class="hero-cta">
+<a class="btn btn-accent" href="#contact">Je veux mon site</a>
+<a class="btn btn-ghost-dark" href="#offres">Voir les prix</a>
+</div>
+<a class="proof" href="#realisations">Déjà en ligne : By Roze Nails, prothésiste ongulaire à Limoges →</a>
+</div>
+<div class="mock-wrap" aria-hidden="true">
+<div class="mock">
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem">Votre salon</b><small style="color:var(--muted)">Aperçu</small></div>
+<b style="font-size:.9rem">1. Choisissez une prestation</b>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="mock-row on"><div><b>Pose complète gel</b><small>1 h 30</small></div><b>35 €</b></div>
+<div class="mock-row"><div><b>Remplissage</b><small>1 h</small></div><b>28 €</b></div>
+<div class="mock-row"><div><b>Semi-permanent</b><small>45 min</small></div><b>20 €</b></div>
+</div>
+<b style="font-size:.9rem">2. Choisissez un créneau</b>
+<div class="slots"><span>9:30</span><span class="on">11:00</span><span>14:00</span></div>
+<span style="background:var(--ink);color:#fff;text-align:center;padding:14px;border-radius:999px;font-weight:600">Confirmer le rendez-vous</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="soft" aria-label="Pour qui">
+<div class="wrap chips">
+<span class="lbl">Pensé pour :</span>
+<span>Ongles</span><span>Coiffure</span><span>Esthétique</span><span>Barbier</span><span>Coaching</span><span>Massage</span>
+</div>
+</section>
+
+<section aria-labelledby="avant-titre" style="padding-top:96px">
+<div class="wrap">
+<div class="intro">
+<h2 id="avant-titre" class="h2">Fini les rendez-vous pris en message privé</h2>
+<p class="lead">Répondre aux DM à 23 h, noter les créneaux à la main, relancer les oublis… Votre site s'en occupe pour vous.</p>
+</div>
+<div class="grid g2">
+<div class="card">
+<h3 style="font-family:Inter,sans-serif;font-size:1.2rem;font-weight:600;color:var(--muted)">Sans site</h3>
+<ul class="list">
+<li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A5F6B" stroke-width="2.2" stroke-linecap="round" style="flex:none;margin-top:2px"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Des messages à toute heure pour demander un créneau</span></li>
+<li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A5F6B" stroke-width="2.2" stroke-linecap="round" style="flex:none;margin-top:2px"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Un agenda noté à la main, et des erreurs</span></li>
+<li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A5F6B" stroke-width="2.2" stroke-linecap="round" style="flex:none;margin-top:2px"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Des clientes qui oublient leur rendez-vous</span></li>
+<li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A5F6B" stroke-width="2.2" stroke-linecap="round" style="flex:none;margin-top:2px"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Vos prix éparpillés entre les stories et les messages</span></li>
+</ul>
+</div>
+<div class="card d">
+<h3 style="font-family:Inter,sans-serif;font-size:1.2rem;font-weight:600">Avec Cario Lab</h3>
+<ul class="list">
+<li><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Vos clientes réservent seules, 24 h/24</span></li>
+<li><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Vos créneaux toujours à jour</span></li>
+<li><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Un mail de confirmation pour chaque rendez-vous</span></li>
+<li><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Vos prestations et vos prix clairs, au même endroit</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="inclus-titre">
+<div class="wrap">
+<div class="intro">
+<h2 id="inclus-titre" class="h2">Tout ce qu'il faut, rien de compliqué</h2>
+<p class="lead">Un site clé en main, à votre image, que vos clientes trouvent et utilisent sans effort.</p>
+</div>
+<div class="grid g3">
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><h3>Réservation en ligne</h3><p>Vos prestations, vos horaires, vos créneaux. Vos clientes réservent quand elles veulent.</p></div>
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><h3>Confirmations par mail</h3><p>Vous et votre cliente recevez un mail à chaque rendez-vous. Moins d'oublis.</p></div>
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><h3>Avis clientes</h3><p>Vos clientes laissent leur avis directement sur le site. La meilleure des pubs.</p></div>
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg><h3>Galerie de vos créations</h3><p>Montrez votre travail, comme sur Insta, mais sur votre propre site.</p></div>
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Parfait sur téléphone</h3><p>La plupart de vos clientes réservent depuis leur téléphone. Tout est pensé pour.</p></div>
+<div class="feat"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14161B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.4A5.6 5.6 0 0 0 22 9.8C22 5.5 17.5 2 12 2z"/></svg><h3>À votre nom, à vos couleurs</h3><p>Votre logo, votre style, vos photos. Un site qui vous ressemble.</p></div>
+</div>
+</div>
+</section>
+
+<section id="realisations" class="sec soft" aria-labelledby="real-titre">
+<div class="wrap">
+<div class="intro" style="gap:16px">
+<p class="eyebrow">Réalisation</p>
+<h2 id="real-titre" class="h2">By Roze Nails</h2>
+<p class="lead">Prothésiste ongulaire à Limoges. Un site de réservation avec ses prestations, ses créneaux, ses règles du studio, la galerie de ses poses, les avis de ses clientes et des confirmations automatiques par mail.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a class="btn btn-dark" href="https://byrozenails.github.io" target="_blank" rel="noopener">Voir le site en ligne</a>
+<a href="#contact" style="font-weight:600;min-height:44px;display:inline-flex;align-items:center;padding:0 4px">Vous voulez le même ?</a>
+</div>
+</div>
+<div class="phones">
+<figure><div class="phone scroll" tabindex="0" aria-label="Étape 1, faites défiler pour voir toute la page"><img src="images/roze-prestations.jpg" alt="By Roze Nails : choix de la prestation, studio, réalisations et avis clientes" loading="lazy" width="640" height="4059"></div><figcaption>1. Choix de la prestation</figcaption></figure>
+<figure><div class="phone"><img src="images/roze-date.jpg" alt="By Roze Nails : choix de la date et des créneaux" loading="lazy" width="640" height="1304"></div><figcaption>2. Choix de la date et du créneau</figcaption></figure>
+<figure><div class="phone scroll" tabindex="0" aria-label="Étape 3, faites défiler pour voir toute la page"><img src="images/roze-coordonnees.jpg" alt="By Roze Nails : coordonnées, options, photo d'inspiration et règles du studio" loading="lazy" width="640" height="3141"></div><figcaption>3. Coordonnées et règles du studio</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="offres" class="sec" aria-labelledby="offres-titre">
+<div class="wrap">
+<div class="intro">
+<h2 id="offres-titre" class="h2">Des offres claires, un prix fixe</h2>
+<p class="lead">Vous savez exactement ce que vous payez. Le site vous appartient, et l'entretien mensuel reste optionnel.</p>
+</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div class="offer">
+<h3>Essentiel</h3>
+<p class="price">390 €</p>
+<p>Pour se lancer avec un site propre et efficace.</p>
+<ul><li>Page unique avec vos prestations et vos prix</li><li>Réservation en ligne</li><li>Confirmations par mail</li><li>Adapté au téléphone</li></ul>
+<a class="btn btn-line" href="#contact" data-offre="essentiel">Choisir Essentiel</a>
+</div>
+<div class="offer d">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h3>Pro</h3><span class="badge">Le plus choisi</span></div>
+<p class="price">690 €</p>
+<p>Le site complet pour développer votre clientèle.</p>
+<ul><li>Tout l'Essentiel</li><li>Avis clientes</li><li>Galerie de vos créations</li><li>Règles du studio et options</li><li>Votre nom de domaine</li></ul>
+<a class="btn btn-accent" href="#contact" data-offre="pro">Choisir Pro</a>
+</div>
+<div class="offer">
+<h3>Entretien</h3>
+<p class="price">29 € <small>/ mois</small></p>
+<p>En option. On s'occupe de tout, vous ne touchez à rien.</p>
+<ul><li>Hébergement du site</li><li>Mises à jour des prestations et des prix</li><li>Ouverture et fermeture de créneaux</li><li>Ajout de nouvelles photos</li><li>Aide en cas de souci</li></ul>
+<a class="btn btn-line" href="#contact" data-entretien="1">Ajouter l'entretien</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="methode" class="sec dark" aria-labelledby="methode-titre">
+<div class="wrap">
+<h2 id="methode-titre" class="h2" style="margin-bottom:48px">Comment ça se passe</h2>
+<ol class="steps">
+<li><span class="n">01</span><h3>On discute</h3><p>Un appel rapide pour comprendre votre activité, vos prestations et votre style.</p></li>
+<li><span class="n">02</span><h3>Je crée votre site</h3><p>Je vous montre une première version. Vous demandez les changements que vous voulez.</p></li>
+<li><span class="n">03</span><h3>Mise en ligne</h3><p>Votre site est en ligne, vous ajoutez le lien dans votre bio Insta et les réservations arrivent.</p></li>
+<li><span class="n">04</span><h3>Suivi</h3><p>Besoin de changer un prix ou un horaire ? Un message et je m'en occupe.</p></li>
+</ol>
+</div>
+</section>
+
+<section id="faq" class="sec" aria-labelledby="faq-titre">
+<div class="wrap faq">
+<h2 id="faq-titre" class="h2" style="margin-bottom:32px">Vos questions</h2>
+<div id="faq-list"></div>
+</div>
+</section>
+
+<section id="contact" class="sec soft" aria-labelledby="contact-titre">
+<div class="wrap contact">
+<div class="contact-text">
+<h2 id="contact-titre" class="h2">Parlons de votre site</h2>
+<p class="lead">Dites-moi en quelques mots ce que vous faites. Je vous recontacte rapidement avec une proposition et un devis gratuit.</p>
+<ul class="list">
+<li style="align-items:center"><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Devis gratuit et sans engagement</span></li>
+<li style="align-items:center"><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Vous validez la maquette avant la mise en ligne</span></li>
+<li style="align-items:center"><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Un seul interlocuteur, du début à la fin</span></li>
+</ul>
+</div>
+<div class="contact-form">
+<form id="form" novalidate>
+<fieldset>
+<legend>Offre qui vous intéresse</legend>
+<div class="pills" id="pills">
+<button type="button" class="pill" data-v="Essentiel" aria-pressed="false">Essentiel · 390 €</button>
+<button type="button" class="pill" data-v="Pro" aria-pressed="true">Pro · 690 €</button>
+<button type="button" class="pill" data-v="À définir ensemble" aria-pressed="false">Je ne sais pas encore</button>
+</div>
+</fieldset>
+<div class="fields">
+<div class="field"><label for="prenom">Prénom *</label><input id="prenom" name="prenom" type="text" autocomplete="given-name" required></div>
+<div class="field"><label for="metier">Votre activité</label><input id="metier" name="activite" type="text" placeholder="Ex. : prothésiste ongulaire"></div>
+<div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" autocomplete="tel" placeholder="Pour que je puisse vous rappeler"></div>
+</div>
+<div class="field">
+<label for="message">Parlez-moi de votre projet *</label>
+<p class="hint" id="message-hint">Votre activité, votre ville, vos prestations, ce que vous voulez sur le site et le style qui vous plaît.</p>
+<textarea id="message" name="message" rows="6" aria-describedby="message-hint" required placeholder="Ex. : Je suis coiffeuse à domicile à Clermont-Ferrand. Je propose coupes, colorations et brushings. J'aimerais que mes clientes réservent en ligne, voir mes réalisations et laisser des avis. Couleurs souhaitées : beige et doré. J'ai déjà un logo et un compte Instagram."></textarea>
+</div>
+<label class="check"><input type="checkbox" id="entretien"><span>Je suis intéressée par l'entretien mensuel (29 €/mois)</span></label>
+<p class="err hidden" id="err" role="alert"></p>
+<button type="submit" class="btn btn-accent" id="send">Envoyer ma demande</button>
+<p class="small">* Champs obligatoires. Vos informations servent uniquement à vous recontacter.</p>
+</form>
+<div class="thanks hidden" id="thanks" role="status" tabindex="-1">
+<span class="big" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+<h3 style="font-size:1.8rem;font-weight:700" id="thanks-title">Merci !</h3>
+<p class="lead" id="thanks-text">Votre demande est bien envoyée. Je vous recontacte très vite pour en parler.</p>
+<button type="button" class="btn btn-line" id="again">Envoyer une autre demande</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="dark">
+<div class="wrap">
+<span><b>Cario Lab</b> · une activité CARIO</span>
+<span>Puy-de-Dôme · Sites partout en France</span>
+<a href="#top">Haut de page ↑</a>
+</div>
+</footer>
+
+<script>
+/* ===== À MODIFIER : l'adresse qui reçoit les demandes ===== */
+var EMAIL_RECEPTION = "TON-EMAIL@exemple.fr";
+/* ========================================================= */
+
+(function(){
+  // FAQ
+  var faqs = [
+    ["Combien de temps pour avoir mon site ?","En général quelques jours à une semaine, selon votre projet et la rapidité à m'envoyer vos infos (prestations, prix, photos)."],
+    ["Est-ce que je dois payer tous les mois ?","Non. Le site est payé une seule fois. L'entretien à 29 €/mois est optionnel : il comprend l'hébergement et toutes les modifications."],
+    ["Je ne suis pas à l'aise avec l'informatique, c'est grave ?","Pas du tout. Je m'occupe de tout, de la création à la mise en ligne. Vous n'avez qu'à partager le lien à vos clientes."],
+    ["Je pourrai changer mes prix et mes horaires ?","Oui. Avec l'entretien, il suffit de m'envoyer un message. Sans entretien, chaque modification est faite sur devis."],
+    ["Comment se passe le paiement ?","Un acompte au lancement du projet, et le solde à la mise en ligne, une fois que vous avez validé votre site."]
+  ];
+  var list = document.getElementById("faq-list");
+  faqs.forEach(function(f,i){
+    var item = document.createElement("div"); item.className = "faq-item";
+    var b = document.createElement("button"); b.type = "button";
+    b.setAttribute("aria-expanded", i===0 ? "true" : "false");
+    b.setAttribute("aria-controls","faq-a"+i);
+    var q = document.createElement("span"); q.textContent = f[0];
+    var s = document.createElement("span"); s.className="sign"; s.setAttribute("aria-hidden","true"); s.textContent = i===0 ? "−" : "+";
+    b.appendChild(q); b.appendChild(s);
+    var a = document.createElement("p"); a.className="ans"; a.id="faq-a"+i; a.textContent=f[1];
+    if(i!==0) a.classList.add("hidden");
+    b.addEventListener("click",function(){
+      var open = b.getAttribute("aria-expanded")==="true";
+      b.setAttribute("aria-expanded", open?"false":"true");
+      s.textContent = open?"+":"−";
+      a.classList.toggle("hidden", open);
+    });
+    item.appendChild(b); item.appendChild(a); list.appendChild(item);
+  });
+
+  // Offres
+  var pills = document.querySelectorAll(".pill");
+  var offre = "Pro";
+  function setOffre(v){
+    offre = v;
+    pills.forEach(function(p){ p.setAttribute("aria-pressed", p.getAttribute("data-v")===v ? "true":"false"); });
+  }
+  pills.forEach(function(p){ p.addEventListener("click",function(){ setOffre(p.getAttribute("data-v")); }); });
+  document.querySelectorAll("[data-offre]").forEach(function(a){
+    a.addEventListener("click",function(){ setOffre(a.getAttribute("data-offre")==="pro" ? "Pro" : "Essentiel"); });
+  });
+  var entretien = document.getElementById("entretien");
+  document.querySelectorAll("[data-entretien]").forEach(function(a){
+    a.addEventListener("click",function(){ entretien.checked = true; });
+  });
+
+  // Formulaire
+  var form = document.getElementById("form"), err = document.getElementById("err"),
+      send = document.getElementById("send"), thanks = document.getElementById("thanks");
+  function showErr(m){ err.textContent = m; err.classList.remove("hidden"); }
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var prenom = form.prenom.value.trim(), email = form.email.value.trim(), message = form.message.value.trim();
+    if(!prenom){ showErr("Indiquez votre prénom."); form.prenom.focus(); return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ showErr("Indiquez une adresse email valide."); form.email.focus(); return; }
+    if(message.length < 15){ showErr("Décrivez votre projet en quelques phrases."); form.message.focus(); return; }
+    err.classList.add("hidden");
+    send.disabled = true; send.textContent = "Envoi en cours…";
+    var data = {
+      _subject: "Nouvelle demande Cario Lab : " + prenom + " (" + offre + ")",
+      _template: "table",
+      _captcha: "false",
+      "Prénom": prenom,
+      "Activité": form.activite.value.trim(),
+      "Email": email,
+      "Téléphone": form.telephone.value.trim(),
+      "Offre": offre,
+      "Entretien mensuel": entretien.checked ? "Oui" : "Non",
+      "Projet": message,
+      _replyto: email
+    };
+    fetch("https://formsubmit.co/ajax/" + EMAIL_RECEPTION, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if(res && (res.success === true || res.success === "true")){
+        document.getElementById("thanks-title").textContent = "Merci " + prenom + " !";
+        document.getElementById("thanks-text").textContent = "Votre demande pour l'offre " + offre + " est bien envoyée. Je vous recontacte très vite pour en parler.";
+        form.classList.add("hidden"); thanks.classList.remove("hidden"); thanks.focus();
+      } else { throw new Error("refus"); }
+    }).catch(function(){
+      showErr("L'envoi n'a pas fonctionné. Réessayez dans un instant.");
+    }).finally(function(){
+      send.disabled = false; send.textContent = "Envoyer ma demande";
+    });
+  });
+  document.getElementById("again").addEventListener("click",function(){
+    form.reset(); setOffre("Pro"); thanks.classList.add("hidden"); form.classList.remove("hidden");
+  });
+})();
+</script>
+</body>
+</html>
